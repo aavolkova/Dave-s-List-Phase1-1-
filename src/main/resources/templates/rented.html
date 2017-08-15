@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Dave's List - Phase1 - Rented</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+<h1>Rented Rooms</h1>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <td><b>Room description</p></b></td>
+        <td><b>Room rules</p></b></td>
+        <td><b>Has WiFi</p></b></td>
+        <td><b>Private Bathroom</p></b></td>
+
+    </tr>
+
+    <!--iterate through all the resumes-->
+    <th:block th:each="r:${rentedR}">
+        <tr>
+            <td><p th:text="${r.description}"></p></td>
+            <td><p th:text="${r.rules}"></p></td>
+            <td><p th:text="${r.wifi}"></p></td>
+            <td><p th:text="${r.privateBathroom}"></p></td>
+        </tr>
+    </th:block>
+</table>
+
+
+
+<a href="/available"> <input type="submit" value="See Available Rooms"/></a>
+<a class="btn btn-primary" href="/" role="button">Link to the Home Page</a>
+<a href="/addRoom"><input type="submit" value="Add New Room"/></a>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+</body>
+</html>
